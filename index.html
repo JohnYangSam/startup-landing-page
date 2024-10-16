@@ -13,61 +13,77 @@
             line-height: 1.6;
         }
         header {
-            background-color: #4CAF50;
-            padding: 10px 20px;
+            background-color: transparent;
+            padding: 20px 40px;
             color: white;
-            text-align: center;
+            text-align: left;
+            position: absolute;
+            width: 100%;
+            top: 0;
         }
         nav a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            font-weight: bold;
         }
         .hero {
-            background: url('hero-image.jpg') no-repeat center center/cover;
+            background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,94,1) 35%, rgba(0,212,255,1) 100%);
             color: white;
-            text-align: center;
-            padding: 100px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 50px;
+            height: 100vh;
+            flex-wrap: wrap;
         }
-        .hero h1 {
-            font-size: 3rem;
+        .hero-text {
+            flex: 1;
+            max-width: 50%;
         }
-        .hero p {
-            font-size: 1.2rem;
-        }
-        .hero a {
-            background-color: #FF5722;
-            padding: 10px 20px;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .features, .about, .testimonials, .footer {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .features h2, .about h2, .testimonials h2 {
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: bold;
             margin-bottom: 20px;
         }
-        .features div, .testimonials div {
-            margin: 10px 0;
+        .hero-text p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
         }
-        .video {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 50px 20px;
+        .cta-button {
+            background-color: #FF5722;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+        .hero-img, .hero-video {
+            flex: 1;
+            max-width: 50%;
             text-align: center;
         }
-        .video iframe {
+        .hero-img img {
             max-width: 100%;
+            border-radius: 20px;
+        }
+        .hero-video iframe {
+            width: 100%;
             height: auto;
-            border: none;
+            border-radius: 20px;
+            max-width: 560px;
+            height: 315px;
         }
         .footer {
             background-color: #333;
             color: white;
+            text-align: center;
+            padding: 20px;
         }
         .footer a {
             color: #FF5722;
@@ -81,60 +97,32 @@
     <header>
         <h1>Biotech Hunter</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#features">Features</a>
-            <a href="#about">About Us</a>
-            <a href="#contact">Contact</a>
+            <a href="#">Products</a>
+            <a href="#">Solutions</a>
+            <a href="#">Pricing</a>
+            <a href="#">Contact</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Crunchbase for Life Science Companies</h1>
-        <p>Discover, track, and connect with the world's most innovative life science companies.</p>
-        <a href="#">Get Started</a>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video">
-        <h2>Watch Our Introduction Video</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/7JwE3g-QGrE" 
-                title="YouTube video player" frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen></iframe>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features" id="features">
-        <h2>Features</h2>
-        <div>
-            <h3>Company Discovery</h3>
-            <p>Search and find biotech companies working on groundbreaking innovations.</p>
+        <div class="hero-text">
+            <h1>Discover Life Science Companies and Grow</h1>
+            <p>Join the millions of companies innovating in the biotech industry. Access critical data and streamline your processes.</p>
+            <a href="#" class="cta-button">Start Now</a>
         </div>
-        <div>
-            <h3>Trial Planning Tools</h3>
-            <p>Access key data to support trial planners with accurate, up-to-date information.</p>
-        </div>
-        <div>
-            <h3>Unified Data</h3>
-            <p>Comprehensive datasets on clinical trials, funding rounds, and regulatory approvals.</p>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <h2>About Us</h2>
-        <p>Biotech Hunter is dedicated to simplifying access to critical data in the life science industry. Our mission is to provide the most comprehensive and up-to-date information on biotech companies to help investors, researchers, and trial planners make informed decisions.</p>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <h2>What Our Users Are Saying</h2>
-        <div>
-            <p>"Biotech Hunter has been an invaluable tool in helping us discover the right partners for our clinical trials!" - Sarah J.</p>
+        <!-- Hero Image -->
+        <div class="hero-img">
+            <img src="path-to-your-image.jpg" alt="Biotech Hunter Illustration">
         </div>
-        <div>
-            <p>"The data provided on life science companies is second to none." - John D.</p>
+
+        <!-- Video Section -->
+        <div class="hero-video">
+            <iframe src="https://www.youtube.com/embed/7JwE3g-QGrE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
         </div>
     </section>
 
