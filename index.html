@@ -3,84 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Landing page for a new startup">
-    <title>Startup Landing Page</title>
+    <meta name="description" content="Biotech Hunter - Crunchbase for Life Science Companies">
+    <title>Biotech Hunter</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            line-height: 1.6;
         }
         header {
-            background-color: #007BFF;
+            background-color: #4CAF50;
+            padding: 10px 20px;
             color: white;
-            padding: 20px 0;
             text-align: center;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
         }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        .intro {
+        .hero {
+            background: url('hero-image.jpg') no-repeat center center/cover;
+            color: white;
             text-align: center;
+            padding: 100px 20px;
         }
-        .intro p {
-            font-size: 1.2em;
+        .hero h1 {
+            font-size: 3rem;
         }
-        .cta {
-            text-align: center;
-            margin-top: 20px;
+        .hero p {
+            font-size: 1.2rem;
         }
-        .cta a {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #007BFF;
+        .hero a {
+            background-color: #FF5722;
+            padding: 10px 20px;
             color: white;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 1.2em;
         }
-        .cta a:hover {
-            background-color: #0056b3;
+        .features, .about, .testimonials, .footer {
+            padding: 40px 20px;
+            text-align: center;
         }
-        footer {
+        .features h2, .about h2, .testimonials h2 {
+            margin-bottom: 20px;
+        }
+        .features div, .testimonials div {
+            margin: 10px 0;
+        }
+        .footer {
             background-color: #333;
             color: white;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        }
+        .footer a {
+            color: #FF5722;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
-        <h1>Startup Name</h1>
+        <h1>Biotech Hunter</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <div class="container">
-        <section class="intro">
-            <h2>Welcome to Startup Name</h2>
-            <p>Your mission statement or tagline goes here. Explain what your startup does and why it matters.</p>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Crunchbase for Life Science Companies</h1>
+        <p>Discover, track, and connect with the world's most innovative life science companies.</p>
+        <a href="#">Get Started</a>
+    </section>
 
-        <section class="cta">
-            <a href="#contact">Get Started</a>
-        </section>
-    </div>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <h2>Features</h2>
+        <div>
+            <h3>Company Discovery</h3>
+            <p>Search and find biotech companies working on groundbreaking innovations.</p>
+        </div>
+        <div>
+            <h3>Trial Planning Tools</h3>
+            <p>Access key data to support trial planners with accurate, up-to-date information.</p>
+        </div>
+        <div>
+            <h3>Unified Data</h3>
+            <p>Comprehensive datasets on clinical trials, funding rounds, and regulatory approvals.</p>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Startup Name. All rights reserved.</p>
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Us</h2>
+        <p>Biotech Hunter is dedicated to simplifying access to critical data in the life science industry. Our mission is to provide the most comprehensive and up-to-date information on biotech companies to help investors, researchers, and trial planners make informed decisions.</p>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <h2>What Our Users Are Saying</h2>
+        <div>
+            <p>"Biotech Hunter has been an invaluable tool in helping us discover the right partners for our clinical trials!" - Sarah J.</p>
+        </div>
+        <div>
+            <p>"The data provided on life science companies is second to none." - John D.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Biotech Hunter. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 
 </body>
