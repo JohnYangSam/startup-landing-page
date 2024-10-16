@@ -59,6 +59,7 @@
             border-radius: 5px;
             font-weight: bold;
             transition: background-color 0.3s ease;
+            cursor: pointer;
         }
         .cta-button:hover {
             background-color: #e64a19;
@@ -68,16 +69,9 @@
             max-width: 50%;
             text-align: center;
         }
-        .hero-img img {
+        .hero-img img, .hero-video video {
             max-width: 100%;
             border-radius: 20px;
-        }
-        .hero-video iframe {
-            width: 100%;
-            height: auto;
-            border-radius: 20px;
-            max-width: 560px;
-            height: 315px;
         }
         .footer {
             background-color: #333;
@@ -89,6 +83,51 @@
             color: #FF5722;
             text-decoration: none;
         }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                padding: 50px 20px;
+                height: auto;
+            }
+            .hero-text {
+                max-width: 100%;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .hero-text p {
+                font-size: 1.2rem;
+            }
+            .cta-button {
+                font-size: 1rem;
+                padding: 10px 20px;
+                margin-bottom: 20px;
+            }
+            .hero-video {
+                max-width: 100%;
+                text-align: center;
+                margin-top: 20px;
+            }
+            .hero-video video {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            .hero-text p {
+                font-size: 1rem;
+            }
+            .cta-button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -97,10 +136,10 @@
     <header>
         <h1>Biotech Hunter</h1>
         <nav>
-            <a href="#">Products</a>
-            <a href="#">Solutions</a>
-            <a href="#">Pricing</a>
-            <a href="#">Contact</a>
+            <a href="https://blog.johnys.io/analyzing-cassava-sciences-phase3-clinical-trials-october-2024/">Products</a>
+            <a href="https://svi.io">Solutions</a>
+            <a href="https://www.youtube.com/watch?v=WrNo1N_AmzU">Pricing</a>
+            <a href="https://linkedin.com/in/johnys">Contact</a>
         </nav>
     </header>
 
@@ -109,28 +148,49 @@
         <div class="hero-text">
             <h1>Discover Life Science Companies and Grow</h1>
             <p>Join the millions of companies innovating in the biotech industry. Access critical data and streamline your processes.</p>
-            <a href="#" class="cta-button">Start Now</a>
+            <button class="cta-button" id="playPauseBtn" onclick="togglePlayPause()">Start Now</button>
         </div>
-
-        <!-- Hero Image -->
-<!--         <div class="hero-img">
-            <img src="path-to-your-image.jpg" alt="Biotech Hunter Illustration">
-        </div> -->
 
         <!-- Video Section -->
         <div class="hero-video">
-<video width="640" height="360" controls autoplay>
-  <source src="https://github.com/JohnYangSam/startup-landing-page/raw/refs/heads/main/BiotechHunterSWPitch1.mp4?autoplay=1" type="video/mp4" allow="autoplay">
-  Your browser does not support the video tag.
-</video>
+            <video id="heroVideo" width="640" height="360" loop>
+              <source src="https://github.com/JohnYangSam/startup-landing-page/raw/refs/heads/main/BiotechHunterSWPitch1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
         </div>
     </section>
 
     <!-- Footer Section -->
     <footer class="footer">
         <p>&copy; 2024 Biotech Hunter. All Rights Reserved.</p>
-        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+<!--         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p> -->
     </footer>
+
+    <script>
+        let hasPlayed = false;  // Track if the video has already been played
+
+        function togglePlayPause() {
+            var video = document.getElementById("heroVideo");
+            var btn = document.getElementById("playPauseBtn");
+
+            if (!hasPlayed) {
+                // Play the video the first time when the button is clicked
+                video.muted = false;  // Unmute the video
+                video.play();  // Play the video
+                btn.textContent = "Pause";  // Change button text to "Pause"
+                hasPlayed = true;
+            } else {
+                // Toggle play/pause functionality after the first click
+                if (video.paused) {
+                    video.play();
+                    btn.textContent = "Pause";  // Change button text to "Pause"
+                } else {
+                    video.pause();
+                    btn.textContent = "Start Now";  // Change button text to "Start Now"
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
